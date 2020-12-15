@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>App Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="bg-profile">
+    <ion-avatar slot="start">
+      <img src="assets/img/avatar.jpg" class="user-avatar">
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="light">
+        <h2>
+          <strong>Agunjal bali</strong>
+        </h2>
+      </ion-text>
+      <ion-text color="tertiary">
+        <h3>
+          agunjal@bali.com
+        </h3>
+      </ion-text>
+      <ion-button icon-left size="small" shape="round" color="dark" (click)="editProfile()">
+        <ion-icon name="contact"></ion-icon>
+        Edit profile
+      </ion-button>
+      <ion-button icon-left size="small" shape="round" color="secondary" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        logout
+      </ion-button>
+    </ion-label>
+  </ion-item>
+
+  <ion-list no-border>
+    <ion-list-header>
+      <ion-text color="dark">
+        <h5>General</h5>
+      </ion-text>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="settings" slot="start" color="primary"></ion-icon>
+      <ion-label color="primary">App Language</ion-label>
+      <ion-select [(ngModel)]="lang">
+        <ion-select-option *ngFor="let language of languages" [value]="language">{{language}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="notifications" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Enable notifications </ion-label>
+      <ion-toggle [(ngModel)]="enableNotifications"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      <ion-text color="dark">
+        <h5>Location Services</h5>
+      </ion-text>
+    </ion-list-header>
+    <ion-item>
+      <ion-icon name="compass" slot="start" color="primary"></ion-icon>
+      <ion-label class="label" color="primary"> Enable Location services </ion-label>
+      <ion-toggle [(ngModel)]="enableNotifications"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="radio-button-off" slot="start" color="primary"></ion-icon>
+      <ion-label color="primary">Reset Geofence</ion-label>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>
